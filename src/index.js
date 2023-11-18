@@ -1,1 +1,1 @@
-const calculateDueDate = require("./calculator/dueDateCalculator");
+import calculateDueDate from "./calculator/dueDateCalculator.js";
