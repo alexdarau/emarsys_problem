@@ -1,4 +1,4 @@
-import { helpers } from "../src/calculator/helpers";
+import { helpers } from "../../src/utils/helpers";
 
 test("is working hour", () => {
     expect(helpers.isWorkingHour(new Date('2023-11-15T13:10:00'))).toBe(true);;
