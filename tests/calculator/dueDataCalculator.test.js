@@ -1,4 +1,4 @@
-const calculateDueDate = require("../../src/calculator/dueDateCalculator");
+import calculateDueDate from "../../src/calculator/dueDateCalculator";
 
 test("due date for the same day", () => {
     expect(calculateDueDate(new Date('2023-11-15T13:10:00'), 3)).toEqual(new Date('2023-11-15T16:10:00'));
@@ -10,6 +10,10 @@ test("due date for multiple days", () => {
 
 test("due date for non-working days", () => {
     expect(calculateDueDate(new Date('2023-11-15T13:10:00'), 24)).toEqual(new Date('2023-11-20T13:10:00'));
+});
+
+test("due date for the same day at the end of the day", () => {
+    expect(calculateDueDate(new Date('2023-11-15T13:00:00'), 4)).toEqual(new Date('2023-11-15T17:00:00'));
 });
 
 test("a problem is reported out of working hours", () => {
